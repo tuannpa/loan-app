@@ -108,13 +108,11 @@ The base URL of all APIs is: http://localhost/api/v1 . Except for Authentication
 
 - PATCH /repayments/{id} : Update a repayment by repayment id.
 
+    Sample payload:
 
-Sample payload:
-
-    <code>{
+   <code>{
   "amount": 3333
   }</code>
-
 
 
 - POST /admin/loans/{id}/approve : Approve a pending loan by loan id.
