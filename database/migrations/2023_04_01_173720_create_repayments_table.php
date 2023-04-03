@@ -3,8 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\Customer;
 use App\Models\Loan;
+use App\Models\User;
 
 class CreateRepaymentsTable extends Migration
 {
@@ -20,7 +20,7 @@ class CreateRepaymentsTable extends Migration
         if (!Schema::hasTable($this->table)) {
             Schema::create($this->table, function (Blueprint $table) {
                 $table->id();
-                $table->foreignIdFor(Customer::class);
+                $table->foreignIdFor(User::class);
                 $table->foreignIdFor(Loan::class);
                 $table->string('state');
                 $table->integer('payment_order');
