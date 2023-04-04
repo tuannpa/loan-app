@@ -69,7 +69,7 @@ sail artisan passport:install // Initialize the client ID and client secret
 - Run unit test with the following command:
 
 ````
-docker exec -it simple-api_laravel.test bash
+sail composer test
 ````
 
 **API Guidelines**
@@ -92,6 +92,7 @@ The base URL of all APIs is: http://localhost/api/v1 . Except for Authentication
 
     + email: npatuan.uit@gmail.com, password: test
 
+
 2. Loan API: 
 
 - GET /loans/{loanId} : Fetch details of a specific loan. Users will not be able to see details of other users loans.
@@ -101,18 +102,18 @@ The base URL of all APIs is: http://localhost/api/v1 . Except for Authentication
 
     Sample payload:
 
-    <code>{
-  "term": 3
-  }</code>
+   ````
+  { "term": 3 }
+  ````
 
 
 - PATCH /repayments/{id} : Update a repayment by repayment id.
 
     Sample payload:
 
-   <code>{
-  "amount": 3333
-  }</code>
+    ````
+    { "amount": 3333 }
+    ````
 
 
 - POST /admin/loans/{id}/approve : Approve a pending loan by loan id.
